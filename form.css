@@ -4,9 +4,8 @@
     font-family: 'Open Sans',sans-serif;
 }
 body{
-    padding:2% 10% 2% 10%;
+    padding:2% 10% 0 10%;
     height:100vh;
-    overflow: hidden;
 }
 header nav,footer{
     display: flex;
@@ -111,7 +110,10 @@ input:focus{
 footer{
     font-size:14px;
     color:grey;
-    margin-top:8%;
+    position: relative;
+    margin-top:5%;
+    padding:30px 0 0 0;
+   
 }
 footer nav ul{
     display: flex;
