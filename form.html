@@ -39,26 +39,29 @@
            </div>
         </section>
         <section class="midmid">
-            <h4>Using the Subway has never been easier!</h4>
+            <h2>Using the Subway has never been easier!</h4>
             <p>Complete the sign up process and receive a QR code you 
                 can use the Subway anywhere in the U.S.
             </p>
         </section>
-        <section class="midinput">
-            <div class="name">
-                <p>First Name</p>
-                <input id="fname"type="text" plaeholder="Steve">
-            </div>
-            <div class="name">
-                <p>Middle Name</p>
-                <input id="mname"type="text" plaeholder="Andrew">
-            </div>
-            <div class="name">
-                <p>Last Name</p>
-                <input id="lname" type="text" plaeholder="Hernands">
-            </div>
-        </section>
-        <button id="next">Next</button>
+        <form>
+            <section class="midinput">
+                <div class="name">
+                    <label>First Name</label>
+                    <input required id="fname"type="text" placeholder="Steve">
+                </div>
+                <div class="name">
+                    <label>Middle Name</label>
+                    <input required id="mname"type="text" placeholder="Andrew">
+                </div>
+                <div class="name">
+                    <label>Last Name</label>
+                    <input required id="lname" type="text" placeholder="Hernands">
+                </div>
+            </section>
+            <button id="next">Next</button>
+        </form>
+       
     </main>
     <footer>
         <p class="downleft">© 2021 Codewell.cc</p>

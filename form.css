@@ -1,0 +1,33 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Open Sans',sans-serif;
+}
+body{
+    padding:2% 7% 2% 7%;
+}
+header nav,footer{
+    display: flex;
+    justify-content: space-between;
+}
+main{
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:4%;
+}
+.midtop,.topname,.midmid,.midinput{
+    display: flex;
+}
+.midmid{
+    flex-direction: column;
+    align-items: center;
+}
+
+footer nav ul{
+    display: flex;
+}
+li{
+    list-style: none;
+}
