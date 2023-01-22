@@ -2,6 +2,7 @@
     padding:0;
     margin:0;
     font-family: 'Open Sans',sans-serif;
+    box-sizing: border-box;
 }
 body{
     padding:2% 10% 0 10%;
@@ -21,7 +22,6 @@ header nav,footer{
     font-size:15px;
 }
 main{
-    border-style: solid;
     display: flex;
     flex-direction: column;
     padding:4%;
@@ -31,7 +31,6 @@ main{
     display: flex;
 }
 .midtop{
-    border-style: solid;
     display: flex;
     width:70%;
     justify-content: space-between;
@@ -52,7 +51,6 @@ main{
 .midmid{
     flex-direction: column;
     align-items: center;
-    border-style: solid;
     width:70%;
     margin:5% 0 2% 0;
 }
@@ -62,7 +60,6 @@ main{
     font-size: 15px;
 }
 form{
-    border-style: solid;
     font-size: 15px;
     font-weight:600;
     width:65%;
@@ -124,4 +121,56 @@ li{
 }
 .downright{
     width:32%; 
+}
+@media (max-width:499px){
+    body{
+        padding:4%;
+    }
+    .midtop,form,.midinput,footer,ul{
+        flex-direction: column;
+        align-items: start;
+        width:100%;    
+    }
+    .topname{
+        margin-bottom: 5%;
+    }
+    .midtop{
+        margin-top: 7%;
+    }
+    main{
+        align-items: start;
+        padding:0;
+    }
+    .midmid{
+        width:100%;
+        margin:10% 0 10% 0;
+    }
+    .midmid h1{
+        text-align: center;
+        width:70%;
+
+    }
+    .midmid p{
+        width:87%;
+    
+    }
+    .name{
+        margin-bottom: 3%;
+        width:100%;
+    }
+    form button,.name input{
+        width:100%;
+    }
+    footer{
+        align-items: start;
+    }
+    .downleft{
+        margin-bottom: 4%;
+    }
+    .downright{
+        line-height: 2rem;
+    }
+    ul li{
+        white-space: nowrap;
+    }
 }
