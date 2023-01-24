@@ -70,6 +70,7 @@ form{
 .midinput{
     justify-content: space-between;
     width:100%;
+    border-style: solid;
     
 }
 .name{
@@ -130,6 +131,7 @@ li{
         flex-direction: column;
         align-items: start;
         width:100%;    
+        
     }
     .topname{
         margin-bottom: 5%;
@@ -175,5 +177,12 @@ li{
     }
 }
 .pg2,#pg2{
-    display:
+    
+}
+.file{
+    height:80%;
+}
+.file input{
+    width:100%;
+    height:100%;
 }
