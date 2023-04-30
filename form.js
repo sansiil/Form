@@ -1,4 +1,9 @@
 
+const eveyNext=document.querySelectorAll('#next');
+//disable every next button
+const disbaleNext_button=eveyNext.forEach(button=>button.disabled=true);
+
+
 //go to next or back page
 
 const changePage=(num,direction)=>{
@@ -57,25 +62,49 @@ const changePage=(num,direction)=>{
  
 // formfilled();
 
+//check is the form is filled or not in each page
+ const formFilled=eveyNext.forEach(nextButton=>nextButton.addEventListener('mouseover',()=>{
+         console.log(2222)
+        //to get all  form pages
+        const allPages=document.querySelectorAll('main main'); 
 
-// document.getElementById('next').addEventListener('mouseover',()=>{
-     
-//     const formfilled=()=>{
-//         const input=document.querySelectorAll('#pg1 input');
-//         document.querySelectorAll('#pg1 input').forEach(isfilled=>{
-//             if(isfilled.value!=='' && isfilled.required){
-//                  document.querySelector('#next').style.cursor='pointer';
-//                  document.querySelector('#next').disabled=false;
-    
-//             }
-//             else{
-//                 console.log('aaa');
-                
-//             }
-//         })
-    
-//      };
 
-//      formfilled();
-    
-// })
+        //query selector all are in node list
+        //converting into array by using Array.from(nodelist)
+        //to use functions like find, filter as they work on array.
+        const displayedPage=Array.from(allPages).find(page=>page.style.display==='flex' || page.style.display==='');
+
+        //find all input inside displayedPage
+        const allInputs=displayedPage.querySelectorAll('input');
+
+        const allInputsArr=Array.from(allInputs);
+
+        //for required input to be true means all are filled
+        //flag variable
+        let allInputsFilled=true;
+
+        //loop through every input in the displayed page
+        for(let i=0;i<allInputsArr.length;i++){
+             if(allInputsArr[i].required && allInputsArr[i].value===''){
+                allInputsFilled=false;
+                break;
+            }
+        };
+
+
+        const next=displayedPage.querySelector('#next');
+
+        next.disabled=!allInputsFilled;
+
+        //if true then cursor is set to pointer;
+        if(allInputsFilled){
+           next.style.cursor='pointer';
+        }
+        else{
+            next.style.cursor='not-allowed';
+        }
+ 
+}))
+
+//to avoid form submission and reload of the page
+eveyNext.forEach(button=>button.addEventListener('click',event =>event.preventDefault()));
