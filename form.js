@@ -40,31 +40,9 @@ const changePage=(num,direction)=>{
 };
 
 
-
-// const form=()=>{
-//     const forms=document.querySelectorAll('form');
-//     forms.forEach(form=>{
-//         form.onsubmit(events=>{
-//             events.preventDefault();
-
-//             events.target.reset();
-//         })
-//     })
-// }
-
-// document.querySelector('.filebox').addEventListener('dragover',()=>0)
-
-// document.querySelectorAll('#next').forEach(button=>{
-//     button.disabled=true;
-// })
-
-
- 
-// formfilled();
-
-//check is the form is filled or not in each page
+//check if the form is filled or not when mouse is hovered over next button
  const formFilled=eveyNext.forEach(nextButton=>nextButton.addEventListener('mouseover',()=>{
-         console.log(2222)
+         
         //to get all  form pages
         const allPages=document.querySelectorAll('main main'); 
 
@@ -104,7 +82,33 @@ const changePage=(num,direction)=>{
             next.style.cursor='not-allowed';
         }
  
-}))
+}));
 
 //to avoid form submission and reload of the page
 eveyNext.forEach(button=>button.addEventListener('click',event =>event.preventDefault()));
+
+
+const fileInput=document.querySelector('#pg3 input').addEventListener('change',()=>{
+
+    const imageName=document.querySelector('#pg3 input').files[0].name;
+    const addName=document.querySelector('.filebox');
+    //if(!document.querySelector('#pg3 h3'))
+    if(document.querySelectorAll('#pg3 h3').length<=0){
+    
+        const h3=document.createElement('h3'); 
+        h3.innerText=imageName; 
+        addName.appendChild(h3);   
+    }
+    else {
+        const h3=document.querySelector('#pg3 h3');
+        h3.innerText=imageName;   
+    }
+    
+    
+})
+
+
+
+
+
+
