@@ -11,171 +11,133 @@
     <title>Form</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <figure>
-                <img src="img/Logo.svg" alt="">
-            </figure>
-            <button class="topbutton">Create an account</button>
-        </nav>
-    </header>
-    <main id="pg1">
-        <section class="midtop">
-           <div class="topname">
-            <button id="number">1</button>
-            <label>Full Name</label>
-           </div>
-           <div class="topname">
-            <button id="number">2</button>
-            <label>Personal Information</label>
-           </div>
-           <div class="topname">
-            <button id="number">3</button>
-            <label>Identification</label>
-           </div>
-           <div class="topname">
-            <button id="number">4</button>
-            <label>Your QR Code</label>
-           </div>
+    <main class="all">
+        <header>
+            <nav>
+                <figure>
+                    <img src="img/Logo.svg" alt="">
+                </figure>
+                <button class="topbutton">Create an account</button>
+            </nav>
+        </header>
+        <section class="info midtop">
+                <div class="topname">
+                 <button id="number1">1</button>
+                 <label>Full Name</label>
+                </div>
+                <div class="topname">
+                 <button id="number2">2</button>
+                 <label>Personal Information</label>
+                </div>
+                <div class="topname">
+                 <button id="number3">3</button>
+                 <label>Identification</label>
+                </div>
+                <div class="topname">
+                 <button id="number4">4</button>
+                 <label>Your QR Code</label>
+                </div>
         </section>
-        <section class="midmid">
-            <h1>Using the Subway has never been easier!</h1>
-            <p>Complete the sign up process and receive a QR code you 
-                can use the Subway anywhere in the U.S.
-            </p>
-        </section>
-        <form>
-            <section class="midinput">
-                <div class="name">
-                    <label>First Name</label>
-                    <input required id="fname"type="text" placeholder="Steve">
-                </div>
-                <div class="name">
-                    <label>Middle Name</label>
-                    <input id="mname"type="text" placeholder="Andrew">
-                </div>
-                <div class="name">
-                    <label>Last Name</label>
-                    <input required id="lname" type="text" placeholder="Hernands">
-                </div>
+        <main id="pg1">
+           
+            <section class="midmid">
+                <h1>Using the Subway has never been easier!</h1>
+                <p>Complete the sign up process and receive a QR code you 
+                    can use the Subway anywhere in the U.S.
+                </p>
             </section>
-            <button onclick="nexxt()" id="next">Next</button>
-        </form> 
-    </main>
-    <main class="" id="pg2">
-        <section class="midtop">
-            <div class="topname">
-             <button id="number">1</button>
-             <label>Full Name</label>
-            </div>
-            <div class="topname">
-             <button id="number">2</button>
-             <label>Personal Information</label>
-            </div>
-            <div class="topname">
-             <button id="number">3</button>
-             <label>Identification</label>
-            </div>
-            <div class="topname">
-             <button id="number">4</button>
-             <label>Your QR Code</label>
-            </div>
-         </section>
-        <section class="midmid">
-            <h1>Enter your personal information</h1>
-            <p>This is used to match what you wrote to confirm your identity. This
-                is required by law.
-            </p>
-        </section>
-        <form>
-            <section class="midinput ">
-                <div class="name">
-                    <label>Date of Birth</label>
-                    <input required id="fname"type="text" placeholder="May 5, 1975">
+            <form class="form">
+                <section class="midinput">
+                    <div class="name">
+                        <label>First Name</label>
+                        <input required id="fname"type="text" placeholder="Steve">
+                    </div>
+                    <div class="name">
+                        <label>Middle Name</label>
+                        <input id="mname"type="text" placeholder="Andrew">
+                    </div>
+                    <div class="name">
+                        <label>Last Name</label>
+                        <input required id="lname" type="text" placeholder="Hernands">
+                    </div>
+                </section>
+                <div class="buttons">
+                     <button onclick="changePage(num=1,direction=1)" id="next" >Next</button>
                 </div>
-                <div class="name">
-                    <label>Phone Number</label>
-                    <input required id="mname"type="number" placeholder="980754321">
+                
+            </form> 
+        </main>
+        <main class="" id="pg2">
+            
+            <section class="midmid">
+                <h1>Enter your personal information</h1>
+                <p>This is used to match what you wrote to confirm your identity. This
+                    is required by law.
+                </p>
+            </section>
+            <div class="form">
+                <section class="midinput ">
+                    <div class="name">
+                        <label>Date of Birth</label>
+                        <input required id="dob"type="text" placeholder="May 5, 1975">
+                    </div>
+                    <div class="name">
+                        <label>Phone Number</label>
+                        <input required id="phnum"type="number" placeholder="980754321">
+                    </div>
+                    <div class="name">
+                        <label>Address</label>
+                        <input required id="address" type="text" placeholder="NSW street,Yemen">
+                    </div>
+                </section>
+                <div class="buttons">
+                    <button id="back"onclick=changePage(2,-1)>Back</button>
+                     <button onclick="changePage(2,1)" id="next">Next</button>
                 </div>
-                <div class="name">
-                    <label>Address</label>
-                    <input required id="lname" type="text" placeholder="NSW street,Yemen">
+            </div>
+    
+        </main>
+    
+        <main class="" id="pg3">
+            
+            <section class="midmid">
+                <h1>Upload Identification</h1>
+                <p>Acceptable forms of identifications are ID, Driver's License, or College ID.
+                </p>
+            </section>
+            <dic class="form">
+                <section class="midinput filebox ">
+                        <input required type="file" name="" id="">
+                        <label class="file">Drag and drop an image of your ID here</label>
+                        <img src="img/Folder.svg" alt="">
+                </section>
+                <div class="buttons">
+                    <button id="back"onclick=changePage(3,-1)>Back</button>
+                     <button onclick="changePage(3,1)" id="next">Next</button>
                 </div>
+            </form>
+    
+        </main>
+        <main class="" id="pg4">
+            <section class="midmid">
+                <h1>Here's your QR Code!</h1>
+                <p>Scan this code next time you're in the subway, you will not need to pay 
+                    for tickets.
+                </p>
             </section>
-            <button id="next">Next</button>
-        </form>
-
-    </main>
-
-    <main class="" id="pg3">
-        <section class="midtop">
-            <div class="topname">
-             <button id="number">1</button>
-             <label>Full Name</label>
+            <div class="form">
+                <section class="midinput qr ">
+                        <img src="img/QR Code.svg">
+                </section>
+                <div class="buttons">
+                    <button id="back"onclick=changePage(4,-1)>Back</button>
+                </div>  
             </div>
-            <div class="topname">
-             <button id="number">2</button>
-             <label>Personal Information</label>
-            </div>
-            <div class="topname">
-             <button id="number">3</button>
-             <label>Identification</label>
-            </div>
-            <div class="topname">
-             <button id="number">4</button>
-             <label>Your QR Code</label>
-            </div>
-         </section>
-        <section class="midmid">
-            <h1>Upload Identification</h1>
-            <p>Acceptable forms of identifications are ID, Driver's License, or College ID.
-            </p>
-        </section>
-        <form>
-            <section class="midinput filebox ">
-                    <label for="" class="file">Drag and drop an image of your ID here</label>
-                    <img src="img/Folder.svg" alt="">
-                    <input required id="file"type="file" placeholder="May 5, 1975">
-            </section>
-            <button id="next">Next</button>
-        </form>
-
-    </main>
-    <main class="" id="pg4">
-        <section class="midtop">
-            <div class="topname">
-             <button id="number">1</button>
-             <label>Full Name</label>
-            </div>
-            <div class="topname">
-             <button id="number">2</button>
-             <label>Personal Information</label>
-            </div>
-            <div class="topname">
-             <button id="number">3</button>
-             <label>Identification</label>
-            </div>
-            <div class="topname">
-             <button id="number">4</button>
-             <label>Your QR Code</label>
-            </div>
-         </section>
-        <section class="midmid">
-            <h1>Here's your QR Code!</h1>
-            <p>Scan this code next time you're in the subway, you will not need to pay 
-                for tickets.
-            </p>
-        </section>
-        <form>
-            <section class="midinput qr ">
-                    <img src="img/QR Code.svg">
-            </section>
-        </form>
-
+            
+        </main>
     </main>
     
     <footer>
-        <hr style="border-top: 1px solid rgb(161, 160, 160);position:absolute;top:0;right:-12.5%;left:-12.5%;">
         <p class="downleft">© 2021 Codewell.cc</p>
         <div class="downright">
             <nav>
