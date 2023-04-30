@@ -126,11 +126,15 @@ const qrGenerator=()=>{
 
      
       img.src='http://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+ 'First Name:'+fname+"%0AMiddle Name:"+mname+
-              '%0ALast Name:'+lname+'%0ADOB:'+fname+"%0APhone Number:"+mname+"%0AAddress:"+address;
+              '%0ALast Name:'+lname+'%0ADOB:'+dob+"%0APhone Number:"+phnum+"%0AAddress:"+address;
 
       
 };
-qrGenerator();
+
+//run qr when next button of pg3 is presses
+
+document.querySelector('#pg3 #next').addEventListener('click',()=>qrGenerator());
+
 
 
 

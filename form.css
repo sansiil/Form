@@ -47,9 +47,9 @@ main{
     flex-direction: column;
     align-items: center;
 }
-/* #pg2,#pg3,#pg4{
+#pg2,#pg3,#pg4{
     display: none;
-} */
+}
 .midtop,.topname,.midmid,.midinput{
     display: flex;
 }
@@ -170,6 +170,7 @@ li{
     gap:30px;
     align-items: center;
     background: rgba(0,17,255,0.1);
+    position: relative;
 }
 /* .filebox input{
     width:100%;
@@ -180,27 +181,25 @@ li{
     font-size: 1.2rem;
     color:rgba(0,0,0,0.8);
 }
-.filebox{
-    position: relative;
-}
 .filebox input{
-    /* width:100%;
-    height:100%; */
+    width:100%;
+    height:100%;
     opacity: 0;
     position: absolute;
     top:0;
-   left:0;
-   right:0;
-   top:0;
-   bottom:0;
-   
+    left:0;
+    right:0;
+    bottom:0;
+    cursor: pointer;
 }
 .qr{
     justify-content: center;
-
 }
 h1{
     text-align: center;
+}
+.qr img{
+    height:130px;
 }
 @media (min-width:500px) and (max-width:999px){
     .all{
