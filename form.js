@@ -8,13 +8,16 @@ const disbaleNext_button=eveyNext.forEach(button=>button.disabled=true);
 
 const changePage=(num,direction)=>{
     //for num number to change color to grey
-    
-    const loosescolor=document.getElementById('number'+num);
+
+
+    //can use window.id 0r wind[id] instead of document .getElemnetById(id)
+
+    const loosescolor=window['number'+num];  //document.getElementById('number'+num);
     loosescolor.style.background='rgba(128, 128, 128,0.1)';
     loosescolor.style.color='grey';
 
     ///display to none for num
-    const pagetohide=document.getElementById('pg'+num);
+    const pagetohide=window['pg'+num];   //document.getElementById('pg'+num);
     pagetohide.style.display='none';
 
     //next page if direction is positive
@@ -29,12 +32,12 @@ const changePage=(num,direction)=>{
     
     
     //for num++ number to change color to green
-    const colorbutton=document.getElementById('number'+num);
+    const colorbutton=window['number'+num];  //document.getElementById('number'+num);
     colorbutton.style.background='rgb(77, 184, 77)';
     colorbutton.style.color='white';
 
     //display to flex for num++
-    const pagetoshow=document.getElementById('pg'+num);
+    const pagetoshow=window['pg'+num];  //document.getElementById('pg'+num);
     pagetoshow.style.display='flex';
 
 };
@@ -92,7 +95,8 @@ const fileInput=document.querySelector('#pg3 input').addEventListener('change',(
 
     const imageName=document.querySelector('#pg3 input').files[0].name;
     const addName=document.querySelector('.filebox');
-    //if(!document.querySelector('#pg3 h3'))
+    
+
     if(document.querySelectorAll('#pg3 h3').length<=0){
     
         const h3=document.createElement('h3'); 
@@ -105,7 +109,31 @@ const fileInput=document.querySelector('#pg3 input').addEventListener('change',(
     }
     
     
-})
+});
+
+const qrGenerator=()=>{
+
+      const fname=window['fname'].value;
+      const mname=window['mname'].value;
+      const lname=window['lname'].value;
+      const dob=window['dob'].value;
+      const phnum=window['phnum'].value;
+      const address=window['address'].value;
+
+
+      const img=document.createElement('img');
+      document.querySelector('.qr').appendChild(img);
+
+     
+      img.src='http://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+ 'First Name:'+fname+"%0AMiddle Name:"+mname+
+              '%0ALast Name:'+lname+'%0ADOB:'+fname+"%0APhone Number:"+mname+"%0AAddress:"+address;
+
+      
+};
+qrGenerator();
+
+
+
 
 
 
