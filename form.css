@@ -288,4 +288,12 @@ h1{
     ul li{
         white-space: nowrap;
     }
+    .qr img{
+        width:50%;
+        height:fit-content;
+        position: relative;
+        left:50%;
+        right:50%;
+       transform: translate(-50%,0);
+    }
 }
