@@ -132,8 +132,17 @@ const qrGenerator=()=>{
 };
 
 //run qr when next button of pg3 is presses
+const qr=document.querySelector('#pg3 #next');
+  
+qr.addEventListener('click',()=>{
 
-document.querySelector('#pg3 #next').addEventListener('click',()=>qrGenerator());
+    const img=document.querySelector('.qr img');
+    //to check img is created or not 
+    //if their is img the function wont run
+    //if no img function generator will runn
+    if(!img)
+       qrGenerator();
+});
 
 
 
