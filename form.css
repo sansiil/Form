@@ -277,11 +277,10 @@ h1{
         white-space: nowrap;
     }
     .qr img{
-        width:50%;
-        height:fit-content;
+        width:40%;
         position: relative;
         left:50%;
         right:50%;
-       transform: translate(-50%,0);
+        transform: translate(-50%,0);
     }
 }

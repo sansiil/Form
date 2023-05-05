@@ -1,7 +1,7 @@
 
-const eveyNext=document.querySelectorAll('#next');
+const everyNext=document.querySelectorAll('#next');
 //disable every next button
-const disbaleNext_button=eveyNext.forEach(button=>button.disabled=true);
+const disbaleNext_button=everyNext.forEach(button=>button.disabled=true);
 
 
 //go to next or back page
@@ -28,25 +28,25 @@ const changePage=(num,direction)=>{
     }
     else{
         num--;
-    }
+    };
     
     
     //for num++ number to change color to green
-    const colorbutton=window['number'+num];  //document.getElementById('number'+num);
+    const colorbutton=document.getElementById('number'+num); //window['number'+num];
     colorbutton.style.background='rgb(77, 184, 77)';
     colorbutton.style.color='white';
 
     //display to flex for num++
-    const pagetoshow=window['pg'+num];  //document.getElementById('pg'+num);
+    const pagetoshow=document.getElementById('pg'+num);  //window['pg'+num];
     pagetoshow.style.display='flex';
 
 };
 
 
-//check if the form is filled or not when mouse is hovered over next button
- const formFilled=eveyNext.forEach(nextButton=>nextButton.addEventListener('mouseover',()=>{
-         
-        //to get all  form pages
+//check if the form is filled or not
+
+const  isformfilled=()=>{
+       //to get all  form pages
         const allPages=document.querySelectorAll('main main'); 
 
 
@@ -69,9 +69,8 @@ const changePage=(num,direction)=>{
              if(allInputsArr[i].required && allInputsArr[i].value===''){
                 allInputsFilled=false;
                 break;
-            }
+            };
         };
-
 
         const next=displayedPage.querySelector('#next');
 
@@ -83,12 +82,20 @@ const changePage=(num,direction)=>{
         }
         else{
             next.style.cursor='not-allowed';
-        }
+        };
  
-}));
 
+    };
+
+//checkks the button is hovered/touched and run isformfilled function.
+//touchstart so works for touch devices also
+everyNext.forEach(nextButton=>{
+        nextButton.addEventListener('mouseover',isformfilled);
+        nextButton.addEventListener('touchstart',isformfilled);
+});
+    
 //to avoid form submission and reload of the page
-eveyNext.forEach(button=>button.addEventListener('click',event =>event.preventDefault()));
+everyNext.forEach(button=>button.addEventListener('click',event =>event.preventDefault()));
 
 
 const fileInput=document.querySelector('#pg3 input').addEventListener('change',()=>{
@@ -106,7 +113,7 @@ const fileInput=document.querySelector('#pg3 input').addEventListener('change',(
     else {
         const h3=document.querySelector('#pg3 h3');
         h3.innerText=imageName;   
-    }
+    };
     
     
 });
@@ -142,14 +149,5 @@ qr.addEventListener('click',()=>{
     //if no img function generator will runn
     if(!img)
        qrGenerator();
+
 });
-
-
-
-
-
-
-
-
-
-
